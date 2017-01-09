@@ -1,0 +1,11 @@
+{% extends "blog/home.html" %}
+
+{% block content %}
+  {% for post in object_list %}
+    <h3><a href="/{{post.id}}"> {{post.title}}</a></h3>
+    <h6>Posted on {{ post.date }}</h6>
+    <p>{{post.body}}</p>
+    <a href="/{{post.id}}">Comments: {{ post.comments.count }}</a>
+    <hr>
+  {% endfor %}
+{% endblock %}
